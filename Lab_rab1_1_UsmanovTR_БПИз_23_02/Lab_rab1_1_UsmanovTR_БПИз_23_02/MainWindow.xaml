@@ -1,0 +1,56 @@
+﻿<Window x:Class="Lab_rab1_1_UsmanovTR_БПИз_23_02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab_rab1_1_UsmanovTR_БПИз_23_02"
+        mc:Ignorable="d"
+        Title="Вариант 17. Комната. Расчёт площади стен" Height="600" Width="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" 
+                   Text="Размеры комнаты" FontWeight="Bold" Margin="0,5,0,10"/>
+
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Длина стены (м):" Margin="0,0,10,5" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Name="TbLength" 
+                 PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown" Margin="0,0,0,5"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Ширина стены (м):" Margin="0,0,10,5" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="2" Grid.Column="1" Name="TbWidth" 
+                 PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown" Margin="0,0,0,5"/>
+
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Высота стены (м):" Margin="0,0,10,5" VerticalAlignment="Center"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Name="TbHeight" 
+                 PreviewTextInput="TextBox_PreviewTextInput" PreviewKeyDown="TextBox_PreviewKeyDown" Margin="0,0,0,5"/>
+
+        <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" 
+                    Orientation="Horizontal" Margin="0,15,0,15">
+            <Button Name="BtnAreaNoOpenings" Click="BtnCalcArea_Click" 
+                    Content="Метод 1. Площадь стен (с окнами и дверьми)" Width="300" Margin="0,0,10,0"/>
+            <Button Name="BtnAreaWithOpenings" Click="BtnCalcAreaWithoutWinAndDoors_Click" 
+                    Content="Метод 2. Площадь стен без окна и двери" Width="250"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" 
+                   Text="Результат:" FontWeight="Bold" Margin="0,5,0,5"/>
+        <TextBox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="4" 
+                 Name="TbResult" IsReadOnly="True" TextWrapping="Wrap" 
+                 VerticalScrollBarVisibility="Auto" MinHeight="80"/>
+        <TextBlock Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="4" 
+           Text="P.S. Размер окна 2x15 метров, размер двери 2x8 метров. &#10;Не уверен, что такие окна и двери существуют, но в задании такие вводные" FontWeight="Bold"/>
+    </Grid>
+</Window>
